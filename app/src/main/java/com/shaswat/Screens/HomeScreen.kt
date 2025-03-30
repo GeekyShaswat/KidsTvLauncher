@@ -23,6 +23,7 @@ import com.shaswat.data.AppInfo
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -76,7 +77,10 @@ fun HomeScreen(
                         if (isFocused) {
                             BorderStroke(4.dp, Color.Yellow)
                         } else BorderStroke(0.dp, Color.Transparent),
-                    ),
+                    )
+                    .clickable{
+                        onSettingsRequest()
+                    },
                 tint = Color.White
             )
         }
