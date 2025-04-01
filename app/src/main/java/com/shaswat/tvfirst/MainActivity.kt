@@ -1,5 +1,6 @@
 package com.shaswat.tvfirst
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
@@ -54,5 +55,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+        // Re-launch your app
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+    }
 }
